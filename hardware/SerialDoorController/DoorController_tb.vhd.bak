@@ -1,0 +1,133 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity DoorController_tb is
+	end DoorController_tb;
+	
+architecture behavioral of DoorController_tb is
+
+component DoorController is
+    port(
+			Dval :in std_logic;
+			Din : in std_logic_vector(4 downto 0);
+			Sclose : in std_logic;
+			Sopen : in std_logic;
+			Psensor : in std_logic;
+			clk : in std_logic;
+			rst: in std_logic;
+			
+			OnOff : out std_logic;
+			Dout : out std_logic_vector(4 downto 0);
+			done : out std_logic
+        );
+end component DoorController;
+
+constant    MCLK_PERIOD : time :=20ns;
+constant	MCLK_HALF_PERIOD : time :=MCLK_PERIOD/2;
+
+signal Dval_tb, Sclose_tb,Sopen_tb, Psensor_tb, clk_tb, rst_tb, OnOff_tb, done_tb : std_logic;
+signal Din_tb, Dout_tb: std_logic_vector(4 downto 0);
+
+begin
+
+UUT: DoorController port map(Dval => Dval_tb,
+									  Din => Din_tb,
+									  Sclose => Sclose_tb,
+									  Sopen => Sopen_tb,
+									  Psensor => Psensor_tb,
+									  clk => clk_tb,
+									  rst => rst_tb,
+									  OnOff => OnOff_tb,
+									  Dout => Dout_tb,
+									  done => done_tb
+							 );
+clk_gen : process
+begin
+	clk_tb <= '0';
+	wait for MCLK_HALF_PERIOD;
+	clk_tb <= '1';
+	wait for MCLK_HALF_PERIOD;
+end process;
+
+stimulus: process
+begin
+	 Dval_tb <='0';
+	 Din_tb <= "00000";
+	 -- Para o teste vamos assumir que a porta começa fechada
+	 Sclose_tb <= '1';
+	 Sopen_tb <= '0';
+	 Psensor_tb <= '0';
+    rst_tb <= '1';
+	wait for MCLK_PERIOD;
+	
+	
+	Din_tb <= "00001";
+	rst_tb <= '0';
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00011";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00111";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "01110";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "11100";
+	wait for MCLK_PERIOD;
+	
+	Dval_tb <='1';
+	Sclose_tb <= '0';
+	wait for 5*MCLK_PERIOD;
+	
+	Sopen_tb <= '1';
+	wait for MCLK_PERIOD;
+	
+	Dval_tb <='0';
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00000";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00001";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00010";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "00100";
+	wait for MCLK_PERIOD;
+	
+	Din_tb <= "01001";
+	wait for MCLK_PERIOD;
+	
+	Dval_tb <='1';		
+	wait for MCLK_PERIOD;
+
+	Sopen_tb <= '0';
+	wait for MCLK_PERIOD;
+	
+	Psensor_tb <= '1';
+	wait for 5*MCLK_PERIOD;
+	
+	Sopen_tb <= '1';
+	wait for MCLK_PERIOD;
+	
+	Psensor_tb <= '0';
+	wait for MCLK_PERIOD;
+	
+	Sopen_tb <= '0';
+	wait for 5*CLK_PERIOD;
+	
+	Sclose_tb <= '1';	
+	wait for MCLK_PERIOD;
+	
+	Dval_tb <='0';	
+	wait for MCLK_PERIOD;
+	
+	wait;
+end process;
+end behavioral;
+
+		

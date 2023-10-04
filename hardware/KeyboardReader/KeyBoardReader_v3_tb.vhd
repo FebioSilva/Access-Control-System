@@ -1,0 +1,91 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity KeyBoardReader_v3_tb is
+	end KeyBoardReader_v3_tb;
+	
+architecture behavioral of KeyBoardReader_v3_tb is
+
+component KeyBoardReader_v3 is
+	port(
+	CLK : in std_logic;
+	Rst : in std_logic;
+	ACK: in std_logic;
+	Ln1,Ln2,Ln3, Ln4: in std_logic;
+	
+	Col1,Col2,Col3: out std_logic;
+	Dval : out std_logic;
+	Q : out std_logic_vector(3 downto 0)
+	);
+end component KeyBoardReader_v3;
+
+constant MCLK_PERIOD : time :=20ns;
+constant	MCLK_HALF_PERIOD : time :=MCLK_PERIOD/2;
+
+signal CLK_tb,Rst_tb,ACK_tb,Ln1_tb,Ln2_tb,Ln3_tb,Ln4_tb,Col1_tb,Col2_tb,Col3_tb,Dval_tb: std_logic;
+signal Q_tb : std_logic_vector(3 downto 0);
+begin
+
+UUT: KeyBoardReader_v3	 port map(
+							 CLK => CLK_tb, 
+							 Rst => Rst_tb, 
+							 Ln1 => Ln1_tb,
+							 Ln2 => Ln2_tb,
+							 Ln3 => Ln3_tb, 
+							 Ln4 => Ln4_tb,
+							 Col1 => Col1_tb,
+							 Col2 => Col2_tb,
+							 Col3 => Col3_tb,
+							 Dval => Dval_tb,
+							 ACK => ACK_tb,
+							 Q => Q_tb
+							 );
+clk_gen : process
+begin
+	clk_tb <= '0';
+	wait for MCLK_HALF_PERIOD;
+	clk_tb <= '1';
+	wait for MCLK_HALF_PERIOD;
+end process;
+
+stimulus: process
+begin
+	ACK_tb <='0';
+	Rst_tb <= '1';
+	Ln1_tb <='1';
+	Ln2_tb <='1';
+	Ln3_tb <='1';
+	Ln4_tb <='1';
+	wait for MCLK_PERIOD;
+	
+	
+	Rst_tb <='0';
+	Ln4_tb <='0';
+	wait for 15*MCLK_PERIOD;
+
+	
+	Ln4_tb <='1';
+	wait for MCLK_PERIOD;
+	
+	Ln2_tb <='0';
+	wait for MCLK_PERIOD;
+	
+	Ln2_tb <='1';
+	wait for MCLK_PERIOD;
+	
+	Ln2_tb <='0';
+	Ln1_tb <='1';
+	wait for MCLK_PERIOD;
+	
+	Ln1_tb <='0';
+	wait for MCLK_PERIOD;
+	
+	ACK_tb <='1';
+	wait for 2*MCLK_PERIOD;
+	
+	ACK_tb <='0';
+	wait for 2*MCLK_PERIOD;
+	
+	wait;
+end process;
+end behavioral;
