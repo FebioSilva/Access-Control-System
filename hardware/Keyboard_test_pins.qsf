@@ -1,0 +1,34 @@
+#============================================================
+# Keyboard
+#============================================================
+set_location_assignment PIN_W5     -to Ln1
+set_location_assignment PIN_AA14   -to Ln2
+set_location_assignment PIN_W12    -to Ln3
+set_location_assignment PIN_AB12   -to Ln4
+set_location_assignment PIN_AB11   -to Col1
+set_location_assignment PIN_AB10   -to Col2
+set_location_assignment PIN_AA9    -to Col3
+#set_location_assignment PIN_AA8    -to	KEYPAD_COL[3]
+
+#============================================================
+# CLOCK
+#============================================================
+set_location_assignment PIN_P11 -to CLK
+
+#============================================================
+# SW
+#============================================================
+set_location_assignment PIN_C10 -to Rst
+#============================================================
+# LED
+#============================================================
+set_location_assignment PIN_A8 -to Dval
+set_location_assignment PIN_A9 -to Wreg
+set_location_assignment PIN_A10 -to Kack
+set_location_assignment PIN_B10 -to CTS
+set_location_assignment PIN_D13 -to Kval
+set_location_assignment PIN_C13 -to K[0]
+set_location_assignment PIN_E14 -to K[1]
+set_location_assignment PIN_D14 -to K[2]
+set_location_assignment PIN_A11 -to K[3]
+#set_location_assignment PIN_B11 -to LEDR[9]
