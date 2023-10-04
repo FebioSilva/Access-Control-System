@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ESCOLA/Desktop/LIC_SCA/hardware/simulation/modelsim
+Edoorcontroller
+Z1 w1683193282
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd
+Z5 FC:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd
+l0
+L4
+V2`Sa:a9K^?M<h5GJckmAc3
+!s100 5ZfW]bmC[j9cO_EQLZXN31
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1687013729
+!i10b 1
+Z8 !s108 1687013729.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd|
+Z10 !s107 C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 14 doorcontroller 0 22 2`Sa:a9K^?M<h5GJckmAc3
+l25
+L20
+V^^GeQKZQm=VRX]>]8:bAc1
+!s100 `TnoQiScd9A>D4lYa9c^X0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edoorcontroller_tb
+Z13 w1687013707
+R2
+R3
+R0
+Z14 8C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd
+Z15 FC:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd
+l0
+L4
+VZlmcC7IPFJ9a6bF4U=TK61
+!s100 fhjmJieILWHczP]XTM91:3
+R6
+32
+Z16 !s110 1687013740
+!i10b 1
+Z17 !s108 1687013740.000000
+Z18 !s90 -reportprogress|300|-work|work|C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd|
+Z19 !s107 C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd|
+!i113 1
+Z20 o-work work
+R12
+Abehavioral
+R2
+R3
+DEx4 work 17 doorcontroller_tb 0 22 ZlmcC7IPFJ9a6bF4U=TK61
+l31
+L7
+VV]GUG6_hWoKEBDW_z>d0I0
+!s100 4[HCdL:EjBFCLhUe[cmdO3
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R20
+R12

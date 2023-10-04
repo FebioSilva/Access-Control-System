@@ -1,0 +1,21 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/KeyboardReader/MUX2_1.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/Register4.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/Register3.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/RAM.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/MUX2_1_3bits.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/HA.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/FlipFlopD.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/FA.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/adder4bit.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/Common_Components/adder3bit.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/KeyboardReader/MAC.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/KeyboardReader/RingB_Control.vhd}
+vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/KeyboardReader/RingBuffer.vhd}
+

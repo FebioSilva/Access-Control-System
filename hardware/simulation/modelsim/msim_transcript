@@ -1,0 +1,65 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do LIC_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:29 on Jun 17,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DoorController
+# -- Compiling architecture behavioral of DoorController
+# End time: 15:55:29 on Jun 17,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:55:40 on Jun 17,2023
+# vcom -reportprogress 300 -work work C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DoorController_tb
+# -- Compiling architecture behavioral of DoorController_tb
+# ** Warning: C:/Users/ESCOLA/Desktop/LIC_SCA/hardware/SerialDoorController/DoorController_tb.vhd(25): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 15:55:40 on Jun 17,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vsim work.doorcontroller_tb
+# vsim work.doorcontroller_tb 
+# Start time: 15:55:43 on Jun 17,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.doorcontroller_tb(behavioral)
+# Loading work.doorcontroller(behavioral)
+add wave -position insertpoint  \
+sim:/doorcontroller_tb/UUT/Dval \
+sim:/doorcontroller_tb/UUT/Din \
+sim:/doorcontroller_tb/UUT/Sclose \
+sim:/doorcontroller_tb/UUT/Sopen \
+sim:/doorcontroller_tb/UUT/Psensor \
+sim:/doorcontroller_tb/UUT/clk \
+sim:/doorcontroller_tb/UUT/rst \
+sim:/doorcontroller_tb/UUT/OnOff \
+sim:/doorcontroller_tb/UUT/Dout \
+sim:/doorcontroller_tb/UUT/done \
+sim:/doorcontroller_tb/UUT/CurrentState \
+sim:/doorcontroller_tb/UUT/NextState
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ESCOLA  Hostname: LAPTOP-CSI0EL6R  ProcessID: 9612
+#           Attempting to use alternate WLF file "./wlftv1wdn3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftv1wdn3
+run -all
+# End time: 15:57:13 on Jun 17,2023, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 2
